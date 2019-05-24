@@ -1,5 +1,4 @@
-# Wagtail Site Sections [![Build Status](https://travis-ci.com/thclark/wagtail_site_blocks.svg?branch=master)](https://travis-ci.com/thclark/wagtail_site_blocks)
-
+# Wagtail Site Sections [![Build Status](https://travis-ci.com/thclark/wagtail_site_sections.svg?branch=master)](https://travis-ci.com/thclark/wagtail_site_sections)
 
 Common wagtail streamfield blocks for quickly building website sections.
 
