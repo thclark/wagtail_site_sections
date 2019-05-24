@@ -18,7 +18,7 @@ with open('README.md') as f:
 
 setup(
     name='wagtail_site_sections',
-    version='0.1.2',
+    version='0.1.3',
     description='Site Sections in Wagtail streamfield',
     long_description=readme_text,
     long_description_content_type="text/markdown",
