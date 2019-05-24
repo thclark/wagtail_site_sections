@@ -1,5 +1,3 @@
-from django.test import TestCase
-from django.urls import reverse
 from wagtail.tests.utils import WagtailPageTests, WagtailTestUtils
 from wagtail.core.models import Page
 from wagtail.tests.utils.form_data import nested_form_data, streamfield
@@ -31,4 +29,4 @@ class SiteSectionTestCase(WagtailPageTests, WagtailTestUtils):
         self.assertCanCreate(root_page, SectionPage, data)
         page = SectionPage.objects.first()
         ser = SectionPageSerializer()
-        representation = ser.to_representation(page)
+        ser.to_representation(page)
