@@ -1,5 +1,5 @@
-from .blocks import HeroSectionBlock, TeamMemberBlock, TeamSectionBlock, CarouselImageBlock, CarouselSectionBlock, \
-    FaqBlock, FaqSectionBlock, TestimonialBlock, TestimonialSectionBlock # noqa
+from .blocks import HeroSectionBlock, TeamMemberBlock, TeamSectionBlock, CarouselImageBlock, CarouselSectionBlock # noqa
+from .blocks import FaqBlock, FaqSectionBlock, TestimonialBlock, TestimonialSectionBlock # noqa
 
 # noqa avoids unused imports in __init__.py bug with flake8
 
