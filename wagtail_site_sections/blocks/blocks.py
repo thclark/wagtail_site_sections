@@ -1,13 +1,17 @@
 from wagtail.core.blocks import StreamBlock, StructBlock, ListBlock, CharBlock, TextBlock, URLBlock
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.embeds.blocks import EmbedBlock
 
 
 class HeroSectionBlock(StructBlock):
     title = CharBlock(required=False, max_length=100, label='Hero title', default='We are heroes')
-    subtitle = TextBlock(required=False, max_length=400, label='Hero subtitle', default='The thing we do is better than any other similar thing and this hero panel will convince you of that, just by having a glorious background image.')
-    # image = ImageChooserBlock(required=True, label='Hero image')
+    subtitle = TextBlock(
+        required=False,
+        max_length=400,
+        label='Hero subtitle',
+        default='The thing we do is better than any other similar thing and this hero panel will \
+                convince you of that, just by having a glorious background image.')
+    image = ImageChooserBlock(required=False, label='Hero image')
     content = StreamBlock([
         ('button', StructBlock([
             ('text', CharBlock(required=False, max_length=80, label='Label')),
@@ -44,7 +48,9 @@ class TeamSectionBlock(StructBlock):
         required=False,
         max_length=100,
         label='Description',
-        default="These people are not incredibly wise. They're just normal. But because they're all `Chief Something Officer` or they gave the startup loads of cash, they're definitely important enough to be on our website..."
+        default="These people are not incredibly wise. They're just normal. But because they're all \
+                `Chief Something Officer` or they gave the startup loads of cash, they're definitely \
+                important enough to be on our website..."
     )
     members = ListBlock(TeamMemberBlock(), label='Team Members')
 

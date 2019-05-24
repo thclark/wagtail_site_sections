@@ -20,4 +20,3 @@ class SectionPageSerializer(serializers.ModelSerializer):
             'body',
         )
         read_only_fields = fields
-
