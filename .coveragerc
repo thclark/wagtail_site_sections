@@ -1,0 +1,10 @@
+[paths]
+source =
+    wagtail_site_sections/
+
+[run]
+omit =
+    manage.py
+    env/*
+    */tests/*
+    */migrations/*
