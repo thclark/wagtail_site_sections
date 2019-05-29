@@ -1,10 +1,11 @@
-from wagtail.core.blocks import StreamBlock, StructBlock, ListBlock, CharBlock, TextBlock, URLBlock
+from wagtail.core.blocks import BooleanBlock, StreamBlock, StructBlock, ListBlock, CharBlock, TextBlock, URLBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.embeds.blocks import EmbedBlock
 
 
 class HeroSectionBlock(StructBlock):
     title = CharBlock(required=False, max_length=100, label='Hero title', default='We are heroes')
+    show_in_menus = BooleanBlock(required=False, label='Show in menus', default=False, help_text='If your frontend supports it, create a link to this part of the page.')
     subtitle = TextBlock(
         required=False,
         max_length=400,
@@ -48,9 +49,7 @@ class TeamSectionBlock(StructBlock):
         required=False,
         max_length=100,
         label='Description',
-        default="These people are not incredibly wise. They're just normal. But because they're all \
-                `Chief Something Officer` or they gave the startup loads of cash, they're definitely \
-                important enough to be on our website..."
+        default='Here is a list of our Head Peeps. They look glorious rendered in HTML but are probably just normal, mortal humans.'
     )
     members = ListBlock(TeamMemberBlock(), label='Team Members')
 
@@ -81,10 +80,10 @@ class CarouselSectionBlock(StructBlock):
 
 
 class FaqBlock(StructBlock):
-    question = CharBlock(required=True, max_length=80, label='Question')
-    answer = TextBlock(required=True, label='Answer')
-    bullet_image = ImageChooserBlock(required=False, label='Bullet image')
-    more_info_url = URLBlock(required=False, label='URL', help_text='A link to be followed for more information on that question, feature or product')
+    question = CharBlock(required=True, max_length=80, label='Question', help_text="Add a simply worded question, like 'How much will it cost?'")
+    answer = TextBlock(required=True, label='Answer', help_text='Provide a short answer in no more than a few lines of text')
+    bullet_image = ImageChooserBlock(required=False, label='Bullet image', help_text='Pick an image for use as a bullet point for this question')
+    more_info_url = URLBlock(required=False, label='URL', help_text='Add a link to be followed for more information on that question, feature or product')
 
     class Meta:
         icon = 'help'
@@ -92,8 +91,8 @@ class FaqBlock(StructBlock):
 
 
 class FaqSectionBlock(StructBlock):
-    title = CharBlock(required=False, max_length=100, label='Section Title'),
-    description = TextBlock(required=False, max_length=100, label='Description')
+    heading = CharBlock(required=False, max_length=100, label='Heading'),
+    description = TextBlock(required=False, max_length=400, label='Description')
     faqs = ListBlock(FaqBlock(), label='FAQs')
 
     class Meta:
@@ -113,10 +112,52 @@ class TestimonialBlock(StructBlock):
 
 
 class TestimonialSectionBlock(StructBlock):
-    heading = CharBlock(required=False, max_length=100, label='Section Title'),
-    description = TextBlock(required=False, max_length=100, label='Description')
+    heading = CharBlock(required=False, max_length=100, label='Heading', default='Testimonials', help_text='Add a heading at the beginning of this page section'),
+    description = TextBlock(required=False, max_length=400, label='Description', default='Our users love us. Look at these rave reviews...')
     testimonials = ListBlock(TestimonialBlock(), label='Testimonials')
 
     class Meta:
         icon = 'placeholder'
         label = 'Testimonials Section'
+
+
+class FeatureBlock(StructBlock):
+    heading = CharBlock(required=True, max_length=80, label='Feature', help_text="Name of a product feature. Keep it short, like 'Free Chat' or 'Secure'")
+    description = TextBlock(required=True, max_length=400, label='Description', help_text='Write a few lines about this feature')
+    bullet_image = ImageChooserBlock(required=False, label='Image', help_text='Pick an image for use as a bullet point in this feature')
+    more_info_url = URLBlock(required=False, label='URL', help_text='A link to be followed for more information')
+
+    class Meta:
+        icon = 'tick-inverse'
+        label = 'Product Feature Description'
+
+
+class FeatureSectionBlock(StructBlock):
+    heading = CharBlock(required=False, max_length=100, label='Heading', default='Why our product is best', help_text='Add a heading at the beginning of this page section'),
+    description = TextBlock(required=False, max_length=400, label='Description', help_text='This is the paragraph where you can write more details about your product. Keep it meaningful!')
+    features = ListBlock(FeatureBlock(), label='Features')
+
+    class Meta:
+        icon = 'list-ul'
+        label = 'Product Features Section'
+
+
+class ProductBlock(StructBlock):
+    heading = CharBlock(required=True, max_length=80, label='Name', help_text="Name of a product. Keep it short, like 'Free Chat' or 'Secure'")
+    description = TextBlock(required=True, max_length=400, label='Description', help_text='Write a few lines about this feature')
+    bullet_image = ImageChooserBlock(required=False, label='Image', help_text='Pick an image for use as a bullet point in this feature')
+    more_info_url = URLBlock(required=False, label='URL', help_text='A link to be followed for more information')
+
+    class Meta:
+        icon = 'tick-inverse'
+        label = 'Product Overview'
+
+
+class ProductSectionBlock(StructBlock):
+    heading = CharBlock(required=False, max_length=100, label='Heading', default='Some of our awesome products', help_text='Add a heading at the beginning of this page section'),
+    description = TextBlock(required=False, max_length=400, label='Description', help_text='This is the paragraph where you can write more details about your product. Keep it meaningful!')
+    features = ListBlock(FeatureBlock(), label='Features')
+
+    class Meta:
+        icon = 'list-ul'
+        label = 'Products Overview Section'
