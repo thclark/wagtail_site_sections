@@ -26,8 +26,6 @@ class HashBlock(FieldBlock):
         return value
 
 
-
-
 class SectionBlock(StructBlock):
     """ A StructBlock, but with a `hash` field that can be used to generate links to sections of page content
     """
