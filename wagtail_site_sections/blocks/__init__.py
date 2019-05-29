@@ -2,7 +2,7 @@ from .base import HashBlock, SectionBlock  # noqa
 from .blocks import HeroSectionBlock, TeamMemberBlock, TeamSectionBlock, CarouselImageBlock, CarouselSectionBlock  # noqa
 from .blocks import FaqBlock, FaqSectionBlock, TestimonialBlock, TestimonialSectionBlock  # noqa
 from .blocks import ProductBlock, ProductSectionBlock, FeatureBlock, FeatureSectionBlock  # noqa
-from .material_icons import IconChoiceBlock  @ noqa
+from .material_icons import IconChoiceBlock  # noqa
 
 # noqa avoids "unused imports in __init__.py" error when using flake8
 
