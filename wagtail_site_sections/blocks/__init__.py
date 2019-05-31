@@ -8,12 +8,14 @@ from .material_icons import IconChoiceBlock  # noqa
 
 
 # Simply add this to any existing list of streamfield blocks in a content panel to enable creation of sections
-section_blocks = [
-    ('carousel_section', CarouselSectionBlock()),
-    ('faq_section', FaqSectionBlock()),
-    ('feature_section', FeatureSectionBlock()),
-    ('product_section', ProductSectionBlock()),
-    ('hero_section', HeroSectionBlock()),
-    ('team_section', TeamSectionBlock()),
-    ('testimonial_section', TestimonialSectionBlock()),
-]
+
+# DO NOT UNCOMMENT. IT CAUSES EVERYTHIHNG TO GET CACHED WEIRDLY AND SCREWS UP MIGRATIONS
+# section_blocks = [
+#     ('carousel_section', CarouselSectionBlock()),
+#     ('faq_section', FaqSectionBlock()),
+#     ('feature_section', FeatureSectionBlock()),
+#     ('product_section', ProductSectionBlock()),
+#     ('hero_section', HeroSectionBlock()),
+#     ('team_section', TeamSectionBlock()),
+#     ('testimonial_section', TestimonialSectionBlock()),
+# ]

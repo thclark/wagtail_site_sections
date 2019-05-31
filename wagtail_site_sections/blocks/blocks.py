@@ -48,7 +48,7 @@ class TeamSectionBlock(SectionBlock):
 
     ########################################
 
-    heading = CharBlock(required=False, max_length=100, label='Heading', default='Our illustrious leaders'),
+    team_section_heading = CharBlock(),
 
     ########################################
 

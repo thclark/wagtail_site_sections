@@ -4,7 +4,7 @@ from wagtail.core.blocks import CharBlock
 from wagtail.core.fields import StreamField
 from wagtail.core.models import Page
 
-from wagtail_site_sections.blocks import section_blocks
+from wagtail_site_sections import blocks
 
 
 logger = logging.getLogger(__name__)
@@ -36,8 +36,8 @@ class SectionPage(Page):
     ```
     """
 
-    body = StreamField(section_blocks + [
-        ('heading', CharBlock(required=False, label='Heading', max_length=120, help_text='', icon='arrow-right')),
+    body = StreamField([
+        ('team_section', blocks.TeamSectionBlock())
     ], blank=True, help_text='Add sections to the page')
 
     content_panels = Page.content_panels + [
