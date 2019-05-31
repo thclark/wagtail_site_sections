@@ -48,7 +48,7 @@ class TeamSectionBlock(SectionBlock):
     heading = CharBlock(required=False, max_length=100, label='Heading', default='Our illustrious leaders'),
     description = TextBlock(
         required=False,
-        max_length=100,
+        max_length=400,
         label='Description',
         default='Here is a list of our Head Peeps. They look glorious rendered in HTML but are probably just normal, mortal humans.'
     )
@@ -62,7 +62,7 @@ class TeamSectionBlock(SectionBlock):
 class CarouselImageBlock(StructBlock):
     image = ImageChooserBlock()
     heading = CharBlock(required=False, max_length=80, label='Main text', help_text='Add an image subtitle'),
-    description = TextBlock(required=False, label='Description', help_text='Add some descriptive information with your image'),
+    description = TextBlock(required=False, max_length=400, label='Description', help_text='Add some descriptive information with your image'),
     more_info_url = URLBlock(required=False, label='Link URL'),
 
     class Meta:
@@ -72,7 +72,7 @@ class CarouselImageBlock(StructBlock):
 
 class CarouselSectionBlock(SectionBlock):
     heading = CharBlock(required=False, max_length=100, label='Heading', help_text='Add a heading at the beginning of this page section'),
-    description = TextBlock(required=False, max_length=100, label='Description', help_text='Provide a slightly more detailed description of what this carousel section is for')
+    description = TextBlock(required=False, max_length=400, label='Description', help_text='Provide a slightly more detailed description of what this carousel section is for')
     images = ListBlock(CarouselImageBlock(), label='Images')
 
     class Meta:
