@@ -45,7 +45,13 @@ class TeamMemberBlock(StructBlock):
 
 
 class TeamSectionBlock(SectionBlock):
+
+    ########################################
+
     heading = CharBlock(required=False, max_length=100, label='Heading', default='Our illustrious leaders'),
+
+    ########################################
+
     description = TextBlock(
         required=False,
         max_length=400,
@@ -61,9 +67,15 @@ class TeamSectionBlock(SectionBlock):
 
 class CarouselImageBlock(StructBlock):
     image = ImageChooserBlock()
+
+    ##########################################
+
     heading = CharBlock(required=False, max_length=80, label='Main text', help_text='Add an image subtitle'),
     description = TextBlock(required=False, max_length=400, label='Description', help_text='Add some descriptive information with your image'),
     more_info_url = URLBlock(required=False, label='Link URL'),
+
+    ##########################################
+
 
     class Meta:
         icon = 'image'
@@ -71,7 +83,14 @@ class CarouselImageBlock(StructBlock):
 
 
 class CarouselSectionBlock(SectionBlock):
+
+    ##########################################
+
     heading = CharBlock(required=False, max_length=100, label='Heading', help_text='Add a heading at the beginning of this page section'),
+
+    ##########################################
+
+
     description = TextBlock(required=False, max_length=400, label='Description', help_text='Provide a slightly more detailed description of what this carousel section is for')
     images = ListBlock(CarouselImageBlock(), label='Images')
 
@@ -92,7 +111,13 @@ class FaqBlock(StructBlock):
 
 
 class FaqSectionBlock(SectionBlock):
+
+    ##########################################
+
     heading = CharBlock(required=False, max_length=100, label='Heading', help_text='Add a heading at the beginning of this page section'),
+
+    ##########################################
+
     description = TextBlock(required=False, max_length=400, label='Description')
     faqs = ListBlock(FaqBlock(), label='FAQs')
 
@@ -102,9 +127,15 @@ class FaqSectionBlock(SectionBlock):
 
 
 class TestimonialBlock(StructBlock):
+    ##########################################
+
     name = CharBlock(required=True, max_length=100, label='Name', help_text='Name of the person making the recommendation'),
     role = CharBlock(required=False, max_length=100, label='Role', help_text='Job title of the person making the recommentation, if any'),
     organisation = CharBlock(required=False, max_length=100, label='Organisation', help_text='Name of the organisation the person is part of, if any'),
+
+    ##########################################
+
+
     quote = TextBlock(required=True, max_length=100, label='Quote', help_text='The nice things they have to say')
     image = ImageChooserBlock(required=False, label='Logo/Picture', help_text="Add either a company logo or a person's mugshot")
     stars = ChoiceBlock(required=True, choices=[
@@ -123,7 +154,14 @@ class TestimonialBlock(StructBlock):
 
 
 class TestimonialSectionBlock(SectionBlock):
+
+    ##########################################
+
     heading = CharBlock(required=False, max_length=100, label='Heading', default='Testimonials', help_text='Add a heading at the beginning of this page section'),
+
+    ##########################################
+
+
     description = TextBlock(required=False, max_length=400, label='Description', default='Our users love us. Look at these rave reviews...')
     testimonials = ListBlock(TestimonialBlock(), label='Testimonials')
 
@@ -144,7 +182,13 @@ class FeatureBlock(StructBlock):
 
 
 class FeatureSectionBlock(SectionBlock):
+    ##########################################
+
     heading = CharBlock(required=False, max_length=100, label='Heading', default='Why our product is best', help_text='Add a heading at the beginning of this page section'),
+
+    ##########################################
+
+
     description = TextBlock(required=False, max_length=400, label='Description', help_text='This is the paragraph where you can write more details about your product. Keep it meaningful!')
     image = ImageChooserBlock(required=False, label='Image', help_text='Pick an image (e.g. of the product) for the side panel of a feature list')
     features = ListBlock(FeatureBlock(), label='Features')
