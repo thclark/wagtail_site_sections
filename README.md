@@ -1,5 +1,7 @@
 # Wagtail Site Sections [![Build Status](https://travis-ci.com/thclark/wagtail_site_sections.svg?branch=master)](https://travis-ci.com/thclark/wagtail_site_sections)
 
+**WARNING - this isn't ready yet - [see issue 6 for an important bug](https://github.com/thclark/wagtail_site_sections/issues/6). There's something super weird going on with the blocks not rendering properly as forms in the wagtail admin; for the life of me I can't figure out why. Help wanted - can anybody spot the (probably stupid oversight) error I've made?**
+
 Common wagtail streamfield blocks for quickly building website sections.
 
 Hero panels, "our team" views, product list, FAQs, etc) added to pages as wagtail stream fields.
