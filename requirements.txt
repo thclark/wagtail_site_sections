@@ -1,5 +1,5 @@
 # These are the requirements for TESTING, not for the actual library. Useful for quick local TDD without tox
-django==2.1.11
+django==2.1.15
 djangorestframework
 mock==2.0.0
 wagtail==2.3
