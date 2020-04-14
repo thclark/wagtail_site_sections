@@ -2,6 +2,6 @@
 django==2.1.15
 djangorestframework
 mock==2.0.0
-wagtail==2.3
+wagtail==2.7.2
 wagtail-factories==1.1.0
 tox==3.7.0
