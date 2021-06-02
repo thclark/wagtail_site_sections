@@ -1,4 +1,5 @@
-**ATTENTION** I've not been able to get the time to bring this library into fruition, and although some interest has been shown there's been nobody champing at the bit to help. I've moved away from wagtail for many of my projects (in favour of gatsby building sites, meaning there's no real need to have a custom CMS solution) and have also fallen foul of long covid, so some projects have to go. I've decided to deprecate this to focus energy on the [octue core libraries](https://github.com/octue) and the [cpplot project](https://github.com/thclark/cpplot) where I feel I have more impact on the scientific community.**
+# ATTENTION
+**I've not been able to get the time to bring this library into fruition, and although some interest has been shown there's been nobody champing at the bit to help. I've moved away from wagtail for many of my projects (in favour of gatsby building sites, meaning there's no real need to have a custom CMS solution) and have also fallen foul of long covid, so some projects have to go. I've decided to deprecate this to focus energy on the [octue core libraries](https://github.com/octue) and the [cpplot project](https://github.com/thclark/cpplot) where I feel I have more impact on the scientific community.**
 
 **This repository will be deleted after 01 January 2023.**
 
